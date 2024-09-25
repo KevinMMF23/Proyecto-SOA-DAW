@@ -1,0 +1,2 @@
+Descargar Live server para que
+firebase pueda conectarse.
