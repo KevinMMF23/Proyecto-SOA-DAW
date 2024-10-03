@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Ropa</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script type="module" src="../js/clothing.js" defer></script>
+</head>
+<body>
+    <h1>Gestión de Inventario de Ropa</h1>
+    
+    <form id="add-clothing-form">
+        <input type="text" name="name" placeholder="Nombre de la prenda" required>
+        <input type="number" name="price" placeholder="Precio" required>
+        <input type="text" name="description" placeholder="Descripción" required>
+        <button type="submit">Añadir Prenda</button>
+    </form>
+
+    <div id="clothing-list"></div>
+</body>
+</html>
