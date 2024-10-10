@@ -4,27 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Inventario</title>
-    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script type="module" src="./js/main.js" defer></script>
+
+    <!-- CSS personalizado (opcional) -->
+
 </head>
 <body>
-    <header>
+    <header class="bg-dark text-white text-center p-3">
         <h1>Gestión de Inventario</h1>
         <nav>
-            <ul>
-                <li><a href="clothing.html">Ropa</a></li>
-                <li><a href="accessories.html">Accesorios</a></li>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="clothing.html">Ropa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="accessories.html">Accesorios</a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h2>Bienvenido a la Gestión de Inventario</h2>
-        <p>Utiliza el menú en la parte superior para gestionar tu inventario de ropa y accesorios.</p>
+    <main class="container mt-4">
+        <h2 class="text-center">Bienvenido a la Gestión de Inventario</h2>
+        <p class="text-center">Utiliza el menú en la parte superior para gestionar tu inventario de ropa y accesorios.</p>
     </main>
 
-    <footer>
-        <p>© 2024 Kevon. Todos los derechos reservados.</p>
+    <footer class="bg-dark text-white text-center p-3">
+        <p>© Kevin Martin Martínez Fausto.</p>
     </footer>
+
+    <!-- Bootstrap JS (opcional para funcionalidades adicionales) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
 </body>
 </html>
