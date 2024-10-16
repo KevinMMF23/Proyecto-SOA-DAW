@@ -4,7 +4,10 @@ import firebaseApp from "firebase/auth";
 
 function home() {
   return (
-    <div>home</div>
+    <div>home
+      <button onClick= {()=> signOut(auth)}>cerrar sesion
+      </button>
+    </div>
   )
 }
 
