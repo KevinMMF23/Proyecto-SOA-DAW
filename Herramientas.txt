@@ -2,3 +2,7 @@ Descargar Live server para que
 firebase pueda conectarse.
 Descargar ES7 React
 Descargar node js
+
+
+npm install,
+npm install firebase

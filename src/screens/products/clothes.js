@@ -1,4 +1,4 @@
-import { db } from '../../firebase/firebase.js';
+/*import { db } from '../../firebase/firebase.js';
 import { collection, addDoc, updateDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
 import { renderItems } from '../../js/main.js';
 
@@ -38,3 +38,4 @@ document.getElementById('clothing-list').addEventListener('click', async (e) => 
 
 // Cargar los elementos al cargar la página
 renderItems('clothing');
+*/
