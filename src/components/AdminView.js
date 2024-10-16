@@ -39,25 +39,29 @@ function AdminView() {
   };
 
   return (
-    <div>
-      <h1>Admin Dashboard</h1>
+    <div className="container mt-4"> {/* Aplicar la clase container */}
+      <h1 className="text-center">Admin Dashboard</h1>
       <h2>Manage Clothes</h2>
       <ClothesForm />
-      <ul>
+      <ul className="list-group mb-4"> {/* Aplicar la clase list-group */}
         {clothes.map((item) => (
-          <li key={item.id}>
-            {item.name} - {item.price}
-            <button onClick={() => handleDeleteClothing(item.id)}>Delete</button>
+          <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
+            {item.name} - ${item.price}
+            <button className="btn btn-danger" onClick={() => handleDeleteClothing(item.id)}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>
       <h2>Manage Accessories</h2>
       <AccessoriesForm />
-      <ul>
+      <ul className="list-group">
         {accessories.map((item) => (
-          <li key={item.id}>
-            {item.name} - {item.price}
-            <button onClick={() => handleDeleteAccessory(item.id)}>Delete</button>
+          <li key={item.id} className="list-group-item d-flex justify-content-between align-items-center">
+            {item.name} - ${item.price}
+            <button className="btn btn-danger" onClick={() => handleDeleteAccessory(item.id)}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>

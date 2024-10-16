@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../firebase/credenciales"; 
 import { collection, getDocs } from "firebase/firestore";
+import { Container, ListGroup } from 'react-bootstrap';
 
 function UserView() {
   const [clothes, setClothes] = useState([]);
@@ -27,25 +28,25 @@ function UserView() {
   }, []);
 
   return (
-    <div>
+    <Container className="mt-4"> {/* Aplicar la clase Container */}
       <h1>User Dashboard</h1>
       <h2>Available Clothes</h2>
-      <ul>
+      <ListGroup>
         {clothes.map((item) => (
-          <li key={item.id}>
+          <ListGroup.Item key={item.id}>
             {item.name} - ${item.price}
-          </li>
+          </ListGroup.Item>
         ))}
-      </ul>
+      </ListGroup>
       <h2>Available Accessories</h2>
-      <ul>
+      <ListGroup>
         {accessories.map((item) => (
-          <li key={item.id}>
+          <ListGroup.Item key={item.id}>
             {item.name} - ${item.price}
-          </li>
+          </ListGroup.Item>
         ))}
-      </ul>
-    </div>
+      </ListGroup>
+    </Container>
   );
 }
 

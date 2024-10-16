@@ -5,4 +5,6 @@ Descargar node js
 
 
 npm install,
+npm update,
 npm install firebase
+npm install react-bootstrap bootstrap

@@ -1,5 +1,31 @@
-/* ELIMINAMOS LOS ESTILOS DE NAVEGADOR */
-@import url("./reset.css");
+/* src/styles/global.css */
 
-/* AÑADE AQUÍ TUS ESTILOS */
-
+/* Estilos de cuerpo y fuente */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Color de fondo general */
+    color: #333; /* Color de texto */
+  }
+  
+  /* Contenedor principal */
+  .container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+    padding: 20px; /* Espaciado interno */
+    background-color: white; /* Fondo blanco para el contenedor */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    border-radius: 8px; /* Bordes redondeados */
+  }
+  
+  /* Estilos para encabezados */
+  h1, h2, h3 {
+    color: #444; /* Color para encabezados */
+  }
+  
+  /* Botones */
+  button {
+    margin: 5px; /* Espaciado entre botones */
+  }
+  
