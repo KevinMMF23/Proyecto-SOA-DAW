@@ -1,11 +1,10 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCP4T-LZXCBwWh5dCgiQumpMhuO4hgjXUw",
   authDomain: "tienda-proyecto-soa-daw.firebaseapp.com",
+  databaseURL: "https://tienda-proyecto-soa-daw-default-rtdb.firebaseio.com",
   projectId: "tienda-proyecto-soa-daw",
   storageBucket: "tienda-proyecto-soa-daw.appspot.com",
   messagingSenderId: "790423393318",
@@ -15,6 +14,5 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
-export { db };
+export default firebaseApp;

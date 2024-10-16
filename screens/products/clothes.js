@@ -1,6 +1,6 @@
-import { db } from '../firebase/firebase.js';
+import { db } from '../../firebase/firebase.js';
 import { collection, addDoc, updateDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
-import { renderItems } from './main.js';
+import { renderItems } from '../../js/main.js';
 
 // Manejo del formulario de agregar prenda
 document.getElementById('add-clothing-form').addEventListener('submit', async (e) => {

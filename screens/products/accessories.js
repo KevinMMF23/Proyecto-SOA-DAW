@@ -1,6 +1,6 @@
-import { db } from '../firebase/firebase.js';
+import { db } from '../../firebase/firebase.js';
 import { collection, addDoc, updateDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
-import { renderItems } from './main.js'; // Asegúrate de que estás importando renderItems
+import { renderItems } from '../../js/main.js'; // Asegúrate de que estás importando renderItems
 
 // Manejo del formulario de agregar accesorio
 document.getElementById('add-accessory-form').addEventListener('submit', async (e) => {
