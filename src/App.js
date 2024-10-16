@@ -1,7 +1,7 @@
 import React from "react";
-import home from "../../Proyecto-SOA-DAW/screens/home";
-import login from "../../Proyecto-SOA-DAW/screens/login";
-import firebaseapp from "../../Proyecto-SOA-DAW/firebase/credenciales";
+import home from "./screens/Home"
+import login from "./screens/Login";
+import firebaseapp from "./firebase/credenciales";
 import {getAuth,onAuthStateChanged}from "firebase/auth"
 const auth = getAuth(firebaseapp);
 

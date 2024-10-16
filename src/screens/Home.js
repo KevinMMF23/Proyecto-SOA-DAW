@@ -1,5 +1,5 @@
 import React from 'react'
-import firebaseApp from '../firebase/credenciales'
+import firebaseApp from './firebase/credenciales'
 import firebaseApp from "firebase/auth";
 
 function home() {

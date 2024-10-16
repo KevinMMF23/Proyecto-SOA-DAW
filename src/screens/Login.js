@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import firebaseApp from '../firebase/credenciales';
+import firebaseApp from './firebase/credenciales';
 import {getAuth, createUserWithEmailAndPassword} from "firebase/auth"
 import {getFirestore,doc,setDoc} from "firebase/firestore"
 const auth=getAuth(firebaseApp);
