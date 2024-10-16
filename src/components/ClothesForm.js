@@ -1,5 +1,6 @@
+// src/components/ClothesForm.js
 import React, { useState } from 'react';
-import { firebaseApp } from '../firebase/credenciales';
+import { db } from '../firebase/credenciales';
 import { collection, addDoc, updateDoc, doc } from 'firebase/firestore';
 
 const ClothesForm = ({ existingClothing }) => {
@@ -9,14 +10,14 @@ const ClothesForm = ({ existingClothing }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (existingClothing) {
-      // Actualizar la ropa existente
-      const clothingDoc = doc(firebaseApp, 'clothes', existingClothing.id);
+      // Actualiza la ropa existente
+      const clothingDoc = doc(db, 'clothes', existingClothing.id);
       await updateDoc(clothingDoc, { name, price: parseFloat(price) });
     } else {
-      // Agregar nueva ropa
-      await addDoc(collection(firebaseApp, 'clothes'), { name, price: parseFloat(price) });
+      // Agrega nueva ropa
+      await addDoc(collection(db, 'clothes'), { name, price: parseFloat(price) });
     }
-    // Limpiar el formulario
+    // Limpia el formulario
     setName('');
     setPrice('');
   };

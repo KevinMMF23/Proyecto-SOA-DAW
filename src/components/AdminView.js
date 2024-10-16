@@ -1,24 +1,24 @@
+// src/components/AdminView.js
 import React, { useEffect, useState } from "react";
-import { firebaseApp } from "../firebase/credenciales";
+import { db } from "../firebase/credenciales"; 
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
-import ClothesForm from "./ClothesForm"; // Asegúrate de que el nombre sea correcto
-import AccessoriesForm from "./AccessoriesForm"; // Asegúrate de que el nombre sea correcto
+import ClothesForm from "./ClothesForm";
+import AccessoriesForm from "./AccessoriesForm";
 
 function AdminView() {
   const [clothes, setClothes] = useState([]);
   const [accessories, setAccessories] = useState([]);
 
-  // Cargar datos de ropa y accesorios
   useEffect(() => {
     const fetchClothes = async () => {
-      const clothesCollection = collection(firebaseApp, "clothes");
+      const clothesCollection = collection(db, "clothes");
       const clothesSnapshot = await getDocs(clothesCollection);
       const clothesList = clothesSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       setClothes(clothesList);
     };
 
     const fetchAccessories = async () => {
-      const accessoriesCollection = collection(firebaseApp, "accessories");
+      const accessoriesCollection = collection(db, "accessories");
       const accessoriesSnapshot = await getDocs(accessoriesCollection);
       const accessoriesList = accessoriesSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
       setAccessories(accessoriesList);
@@ -29,12 +29,12 @@ function AdminView() {
   }, []);
 
   const handleDeleteClothing = async (id) => {
-    await deleteDoc(doc(firebaseApp, "clothes", id));
+    await deleteDoc(doc(db, "clothes", id));
     setClothes(clothes.filter((item) => item.id !== id));
   };
 
   const handleDeleteAccessory = async (id) => {
-    await deleteDoc(doc(firebaseApp, "accessories", id));
+    await deleteDoc(doc(db, "accessories", id));
     setAccessories(accessories.filter((item) => item.id !== id));
   };
 

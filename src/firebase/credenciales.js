@@ -1,6 +1,7 @@
+// src/firebase/credenciales.js
 import { initializeApp } from "firebase/app";
-
-
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCP4T-LZXCBwWh5dCgiQumpMhuO4hgjXUw",
@@ -13,6 +14,15 @@ const firebaseConfig = {
   measurementId: "G-XFCX9QFVQ9"
 };
 
-// Initialize Firebase
+// Inicializa Firebase
 const firebaseApp = initializeApp(firebaseConfig);
+
+// Exporta Auth y Firestore
+const auth = getAuth(firebaseApp);
+const db = getFirestore(firebaseApp);
+
+// Exporta firebaseApp como exportación por defecto
 export default firebaseApp;
+
+// También exporta auth y db
+export { auth, db };

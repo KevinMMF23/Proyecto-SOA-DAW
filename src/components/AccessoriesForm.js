@@ -1,6 +1,6 @@
 // src/components/AccessoriesForm.js
 import React, { useState } from 'react';
-import { firebaseApp } from '../firebase/credenciales';
+import { db } from '../firebase/credenciales';
 import { collection, addDoc, updateDoc, doc } from 'firebase/firestore';
 
 const AccessoriesForm = ({ existingAccessory }) => {
@@ -10,14 +10,14 @@ const AccessoriesForm = ({ existingAccessory }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (existingAccessory) {
-      // Actualizar el accesorio existente
-      const accessoryDoc = doc(firebaseApp, 'accessories', existingAccessory.id);
+      // Actualiza el accesorio existente
+      const accessoryDoc = doc(db, 'accessories', existingAccessory.id);
       await updateDoc(accessoryDoc, { name, price: parseFloat(price) });
     } else {
-      // Agregar nuevo accesorio
-      await addDoc(collection(firebaseApp, 'accessories'), { name, price: parseFloat(price) });
+      // Agrega nuevo accesorio
+      await addDoc(collection(db, 'accessories'), { name, price: parseFloat(price) });
     }
-    // Limpiar el formulario
+    // Limpia el formulario
     setName('');
     setPrice('');
   };
