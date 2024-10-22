@@ -1,12 +1,15 @@
-// src/components/UserView.js
-import React, { useEffect, useState } from "react";
-import { db } from "../firebase/credenciales"; 
+import React, { useEffect, useState, useContext } from "react";
+import { db } from "../firebase/credenciales";
 import { collection, getDocs } from "firebase/firestore";
-import { Container, ListGroup } from 'react-bootstrap';
+import { Container, ListGroup, Button, Alert } from 'react-bootstrap';
+import { CartContext } from '../context/CartContext';
+import { useNavigate } from 'react-router-dom'; // Importar useNavigate
 
 function UserView() {
   const [clothes, setClothes] = useState([]);
   const [accessories, setAccessories] = useState([]);
+  const { addToCart, message } = useContext(CartContext);
+  const navigate = useNavigate(); // Usar useNavigate
 
   useEffect(() => {
     const fetchClothes = async () => {
@@ -27,22 +30,31 @@ function UserView() {
     fetchAccessories();
   }, []);
 
+  // Maneja la adición al carrito y la redirección
+  const handleAddToCart = (item) => {
+    addToCart(item);
+    navigate('/cart'); // Redirige a la página del carrito
+  };
+
   return (
-    <Container className="mt-4"> {/* Aplicar la clase Container */}
+    <Container className="mt-4">
       <h1>User Dashboard</h1>
+      {message && <Alert variant="success">{message}</Alert>}
       <h2>Available Clothes</h2>
       <ListGroup>
         {clothes.map((item) => (
-          <ListGroup.Item key={item.id}>
+          <ListGroup.Item key={item.id} className="d-flex justify-content-between align-items-center">
             {item.name} - ${item.price}
+            <Button variant="primary" onClick={() => handleAddToCart(item)}>Add to Cart</Button>
           </ListGroup.Item>
         ))}
       </ListGroup>
-      <h2>Available Accessories</h2>
+      <h2 className="mt-4">Available Accessories</h2>
       <ListGroup>
         {accessories.map((item) => (
-          <ListGroup.Item key={item.id}>
+          <ListGroup.Item key={item.id} className="d-flex justify-content-between align-items-center">
             {item.name} - ${item.price}
+            <Button variant="primary" onClick={() => handleAddToCart(item)}>Add to Cart</Button>
           </ListGroup.Item>
         ))}
       </ListGroup>

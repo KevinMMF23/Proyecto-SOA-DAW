@@ -8,3 +8,5 @@ npm install,
 npm update,
 npm install firebase
 npm install react-bootstrap bootstrap
+npm install react-router-dom
+npm install firebase react-router-dom react-bootstrap bootstrap
